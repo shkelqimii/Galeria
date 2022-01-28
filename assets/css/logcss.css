@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color:black;
+}
+
+.bg-img{
+  background: url('foto1.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+
+}
+/*---------------nav bar*/
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    text-align: right;
+}
+nav ul li {
+    display: inline-block;
+    text-align: left;
+    margin-left: 2em;
+}
+nav a {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .7em 0 .7em 0;
+    color: #fff;
+    text-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.5);
+}
+nav > a:hover {
+    color: #ef4138;
+    text-shadow: none;
+}
+/* Hide Dropdowns by Default */
+nav ul ul {
+    z-index: 4;
+    position: absolute;
+    margin-left: -2em;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    transition: all .1s cubic-bezier(0.72, .1, .72, .96);
+}
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+
+    opacity: 1;
+    visibility: visible;
+}
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+    width: 15rem;
+    float: none;
+    display: list-item;
+    position: relative;
+    background: #fff;
+    border-bottom: solid .1rem rgba(255, 255, 255, .1);
+}
+nav ul ul li:last-child {
+    border-bottom: none;
+}
+nav ul ul li a {
+    font-size: 1.2rem;
+    color: #666 !important;
+    text-shadow: none;
+    padding-left: 2rem;
+}
+nav ul ul li a:hover {
+    color: #ef4138 !important;
+}
+
+/* Second, Third and more Tiers */
+nav ul ul ul li {
+    top: -4.5rem;
+    left: 11.5rem;
+}
+.header {
+    position: relative;
+    height: 30rem;
+    width: 100%;
+    color: #fff;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+
+#logo img {
+    box-shadow: none;
+  position: absolute;
+  top: 8px;
+
+    width: 19rem;
+}
+#menu{
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 22px;
+
+}
+.main-menu {
+    padding: 0 6rem;
+    width: 100%;
+    margin: 5rem auto;
+}
+/*Fixed header class*/
+.fixed {
+    position: fixed;
+    height: 10%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: #fff !important;
+    background: transparent;
+}
+.menu-active {
+    color: #E80000;
+}
+/*--------------Mobile menu-----------------------*/
+.mobile-menu{
+  cursor: pointer;
+  color: #fff;
+}
+.mobile-menu-overlay{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  text-align: right;
+  background: #ef4138;
+  overflow: auto;
+  padding: 2.4rem 2.6rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all ease-in-out 0.5s;
+          transition: all ease-in-out 0.5s;
+}
+.mobile-menu-content{
+  position: absolute;
+  right: 2.6rem;
+  top: 10rem;
+  overflow-y: auto;
+}
+.mobile-menu-item a{
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.mobile-submenu{
+  display: none;
+}
+.mobile-submenu a{
+  font-size: 1.8rem;
+  opacity: .8;
+}
+.visible{
+  opacity: 1;
+  visibility: visible;
+}
+/*mbyllje*/
+
+.wrapper{
+  position: absolute;
+  top: 13%;
+  left: 7%;
+  overflow: hidden;
+  max-width: 390px;
+  background: rgb(19, 18, 18);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title-text{
+  display: flex;
+  width: 200%;
+}
+.wrapper .title{
+  width: 50%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.wrapper .slide-controls{
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+.slide-controls .slide{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+.slide-controls label.signup{
+  color: #000;
+}
+.checkbox-text{
+  text-align: center;
+}
+.slide-controls .slider-tab{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left, #e75454, #702a4b);
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+input[type="radio"]{
+  display: none;
+}
+#signup:checked ~ .slider-tab{
+  left: 50%;
+}
+#signup:checked ~ label.signup{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+#signup:checked ~ label.login{
+  color: #000;
+}
+#login:checked ~ label.signup{
+  color: #fff
+}
+#login:checked ~ label.login{
+  cursor: default;
+  user-select: none;
+}
+.wrapper .form-container{
+  width: 100%;
+  overflow: hidden;
+}
+.form-container .form-inner{
+  display: flex;
+  width: 200%;
+}
+.form-container .form-inner form{
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-inner form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+.form-inner form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.form-inner form .field input:focus{
+  border-color: #fc83bb;
+  /* box-shadow: inset 0 0 3px #fb6aae; */
+}
+.form-inner form .field input::placeholder{
+  color: #999;
+  transition: all 0.3s ease;
+}
+form .field input:focus::placeholder{
+  color: #b3b3b3;
+}
+.form-inner form .pass-link{
+  margin-top: 5px;
+}
+.form-inner form .signup-link{
+  text-align: center;
+  margin-top: 30px;
+}
+.form-inner form .pass-link a,
+.form-inner form .signup-link a{
+  color: #f32b67;
+  text-decoration: none;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover{
+  text-decoration: underline;
+}
+form .btn{
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .btn-layer{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #e75454, #702a4b, #e75454, #702a4b);
+  border-radius: 5px;
+  transition: all 0.4s ease;;
+}
+form .btn:hover .btn-layer{
+  left: 0;
+}
+form .btn input[type="submit"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
